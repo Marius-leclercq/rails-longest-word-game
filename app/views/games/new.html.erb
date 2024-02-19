@@ -1,0 +1,12 @@
+<div class="test">
+<h1>New Game</h1>
+<%= @letters %>
+<p>What is the longuest word you can find ?</p>
+<form action="score" action="post" data-turbo="false">
+  <input type="text" name="play">
+  <input type="submit" value="Play">
+  <input type="hidden" name="letters" value="<%= @letters.join %>">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+<%= link_to "Want new letters ?", new_path %>
+</div>
